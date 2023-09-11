@@ -1,0 +1,14 @@
+ion-card img{
+    width: 30%;
+    height: 30%;
+    object-fit: cover;
+}
+ion-card{
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 0 2px 8px ;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}

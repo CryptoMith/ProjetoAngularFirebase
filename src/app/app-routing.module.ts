@@ -10,7 +10,35 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'suite1',
+    loadChildren: () => import('./suite1/suite1.module').then( m => m.Suite1PageModule)
+  },
+  {
+    path: 'suite2',
+    loadChildren: () => import('./suite2/suite2.module').then( m => m.Suite2PageModule)
+  },
+  {
+    path: 'suite3',
+    loadChildren: () => import('./suite3/suite3.module').then( m => m.Suite3PageModule)
+  },
+  {
+    path: 'suite4',
+    loadChildren: () => import('./suite4/suite4.module').then( m => m.Suite4PageModule)
+  },
+  {
+    path: 'suite5',
+    loadChildren: () => import('./suite5/suite5.module').then( m => m.Suite5PageModule)
+  },
+  {
+    path: 'suite6',
+    loadChildren: () => import('./suite6/suite6.module').then( m => m.Suite6PageModule)
+  },
+  {
+    path: 'suitep',
+    loadChildren: () => import('./suitep/suitep.module').then( m => m.SuitepPageModule)
+  },
 ];
 
 @NgModule({
