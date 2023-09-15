@@ -32,6 +32,7 @@ export class HomePage {
     private _message: MessageService
   ) { }
 
+
   criarConta(dados: any){
     this._authenticate.register(dados.email, dados.password)
   }
