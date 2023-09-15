@@ -7,15 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { Suite5PageRoutingModule } from './suite5-routing.module';
 
 import { Suite5Page } from './suite5.page';
-import { RouterLink } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Suite5PageRoutingModule,
-    RouterLink
+    Suite5PageRoutingModule
   ],
   declarations: [Suite5Page]
 })

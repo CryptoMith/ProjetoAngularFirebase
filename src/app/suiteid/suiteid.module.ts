@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Suite3PageRoutingModule } from './suite3-routing.module';
+import { SuiteidPageRoutingModule } from './suiteid-routing.module';
 
-import { Suite3Page } from './suite3.page';
+import { SuiteidPage } from './suiteid.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Suite3PageRoutingModule
+    SuiteidPageRoutingModule
   ],
-  declarations: [Suite3Page]
+  declarations: [SuiteidPage]
 })
-export class Suite3PageModule {}
+export class SuiteidPageModule {}

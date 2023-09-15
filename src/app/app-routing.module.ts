@@ -12,6 +12,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'suite',
+    loadChildren: () => import('./suite/suite.module').then( m => m.SuitePageModule)
+  },
+  {
     path: 'suite1',
     loadChildren: () => import('./suite1/suite1.module').then( m => m.Suite1PageModule)
   },
@@ -36,8 +40,12 @@ const routes: Routes = [
     loadChildren: () => import('./suite6/suite6.module').then( m => m.Suite6PageModule)
   },
   {
-    path: 'suitep',
-    loadChildren: () => import('./suitep/suitep.module').then( m => m.SuitepPageModule)
+    path: 'suitefm',
+    loadChildren: () => import('./suitefm/suitefm.module').then( m => m.SuitefmPageModule)
+  },
+  {
+    path: 'suiteid',
+    loadChildren: () => import('./suiteid/suiteid.module').then( m => m.SuiteidPageModule)
   },
 ];
 
@@ -48,3 +56,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 

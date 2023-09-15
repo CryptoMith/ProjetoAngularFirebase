@@ -7,15 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { Suite2PageRoutingModule } from './suite2-routing.module';
 
 import { Suite2Page } from './suite2.page';
-import { RouterLink } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Suite2PageRoutingModule,
-    RouterLink
+    Suite2PageRoutingModule
   ],
   declarations: [Suite2Page]
 })

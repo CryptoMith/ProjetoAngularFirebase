@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SuitepPageRoutingModule } from './suitep-routing.module';
+import { SuitefmPageRoutingModule } from './suitefm-routing.module';
 
-import { SuitepPage } from './suitep.page';
+import { SuitefmPage } from './suitefm.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SuitepPageRoutingModule
+    SuitefmPageRoutingModule
   ],
-  declarations: [SuitepPage]
+  declarations: [SuitefmPage]
 })
-export class SuitepPageModule {}
+export class SuitefmPageModule {}
