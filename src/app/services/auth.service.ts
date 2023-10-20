@@ -53,6 +53,7 @@ export class AuthenticateService {
         signInWithEmailAndPassword(this.auth, email, password)
         .then((response: any) => {
             console.log(response.user);
+            localStorage.setItem('usuario', JSON.stringify(response.user))
             this._message.show('Login Realizado com Sucesso!');
         })
         .catch((_: any) => {

@@ -1,10 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button id="click-trigger">
+      <ng-container *ngIf="this.usuario">
+        <ion-label>{{this.usuario.email}}</ion-label>
+      </ng-container>
+      <ion-button id="click-trigger" (click)="presentPopover($event)">
         <ion-icon slot="icon-only" name="person-circle"></ion-icon>
       </ion-button>
-      <ion-popover trigger="click-trigger" triggerAction="click">
+      <ion-popover trigger="click-trigger" triggerAction="click" #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
         <ng-template>
           <ion-content class="ion-padding" class="popover">
             <ion-row>
@@ -20,11 +23,12 @@
                     <ion-input label="Senha" name="password" ngModel type="password"></ion-input>
                   </ion-item>
                   <ion-item lines="none" class="popover">
-                    <ng-container>
-                      <ion-button routerLink="/cadastro">Criar Uma</ion-button>
+                      <ion-button (click)="fecharPopover()">Criar Uma</ion-button>
+                    <ng-container *ngIf="this.usuario">
+                      <ion-button (click)="fecharPopover()">Sair</ion-button>
                     </ng-container>
                     <ion-button color="light" slot="end" type="submit">
-                      <ng-container *ngIf="this._authenticate.isLoading">
+                      <ng-container *ngIf="this._authenticate.isLoading">  
                         <ion-spinner></ion-spinner>
                       </ng-container>
                       <ng-container *ngIf="!this._authenticate.isLoading">

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthenticateService } from '../services/auth.service';
 import { CrudService } from '../services/crud.service';
 import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
 import { MessageService } from '../services/message.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,18 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  isLoading: boolean = false;
+  
+  @ViewChild('popover') popover:any;
+  isOpen = false;
+  presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
+  }
+  
+  usuario: any | null;
 
+  isLoading: boolean = false;
+  
   alunos = [];
 
   nome = 'Joaozinho';
@@ -29,8 +40,27 @@ export class HomePage {
     public _authenticate: AuthenticateService,
     private _crudService: CrudService,
     public storage: Storage,
-    private _message: MessageService
-  ) { }
+    private _message: MessageService,
+    private _router: Router
+ ) {
+  let user: any = localStorage.getItem('usuario')
+    if (user) {
+      this.usuario = JSON.parse(user);
+    }
+
+    // localStorage.removeItem('usuario')
+ }
+
+
+ fecharPopover() {
+  this.isOpen = false;
+
+  setTimeout(() => {
+    this._router.navigate(['/cadastro'])
+  }, 1000);
+
+ }
+
 
 
   criarConta(dados: any){
@@ -39,6 +69,11 @@ export class HomePage {
 
   realizarLogin(dados: any) {
     this._authenticate.login(dados.email, dados.password);
+
+    let user:any = localStorage.getItem('usuario')
+    if (user) {
+      this.usuario = JSON.parse(user);
+    }
   }
 
   inserirAluno(dados: any){
