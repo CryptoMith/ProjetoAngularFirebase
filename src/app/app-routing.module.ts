@@ -47,6 +47,11 @@ const routes: Routes = [
     path: 'suiteid',
     loadChildren: () => import('./suiteid/suiteid.module').then( m => m.SuiteidPageModule)
   },
+  {
+    path: 'suitedx',
+    loadChildren: () => import('./suitedx/suitedx.module').then( m => m.SuitedxPageModule)
+  },
+ 
 ];
 
 @NgModule({

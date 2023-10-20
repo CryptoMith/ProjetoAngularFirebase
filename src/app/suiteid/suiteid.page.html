@@ -1,13 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>suiteid</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">suiteid</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <head>
+    <style>
+      @font-face {
+        font-family: 'MinhaFonteManuscrita';
+        src: url('caminho/para/fonte.ttf') format('truetype');
+      }
+      h1 {
+        font-family: 'MinhaFonteManuscrita', beech;
+        color: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+   <ion-row class="container">
+
+    <ion-col size="12" size-lg="6">
+      <ion-card>
+        <h1>Reserve seu Quarto</h1>
+        <h1>Selecione a data:</h1>
+        <ion-item>
+          <ion-datetime class="custom-datetime" presentation="date" [multiple]="true" [value]="['2022-06-03', '2022-06-04', '2022-06-05']"></ion-datetime>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button color="primary" slot="end" type="Submit">Reservar</ion-button>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+   </ion-row>
+
 </ion-content>
