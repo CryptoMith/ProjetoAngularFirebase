@@ -11,6 +11,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
   {
     path: 'suite',
     loadChildren: () => import('./suite/suite.module').then( m => m.SuitePageModule)
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'suiteid',
     loadChildren: () => import('./suiteid/suiteid.module').then( m => m.SuiteidPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
 ];
 
