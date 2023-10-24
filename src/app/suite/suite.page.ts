@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuitePage implements OnInit {
 
+  
+
   constructor() { }
 
   ngOnInit() {
