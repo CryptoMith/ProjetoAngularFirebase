@@ -6,3 +6,29 @@ ion-popover {
     --background: var(--ion-color-tertiary);
     --color: black;
 }
+ion-content{
+--background: rgb(255, 255, 255);
+}
+
+ion-card{
+    height: 750px;
+    width: 500px;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+    ion-card-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ion-button{
+        
+        position: absolute;
+        right: 20px; 
+        top: 50%; 
+        transform: translateY(-50%);
+       --background: #32A89C;
+
+    }
