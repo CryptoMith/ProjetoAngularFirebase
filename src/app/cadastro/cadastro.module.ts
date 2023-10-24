@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { CadastroPageRoutingModule } from './cadastro-routing.module';
 
 import { CadastroPage } from './cadastro.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroPageRoutingModule
+    CadastroPageRoutingModule,
   ],
   declarations: [CadastroPage]
 })

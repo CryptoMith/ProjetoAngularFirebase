@@ -61,6 +61,14 @@ export class HomePage {
 
  }
 
+ removerUsuario() {
+  this.isOpen = false;
+
+  setTimeout(() => {
+    localStorage.removeItem('usuario')
+    this._router.navigate([self])
+  }, 1000);
+ }
 
 
   criarConta(dados: any){

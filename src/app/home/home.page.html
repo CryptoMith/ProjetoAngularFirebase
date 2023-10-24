@@ -13,19 +13,23 @@
             <ion-row>
               <ion-col>
                 <form #loginForm="ngForm" (ngSubmit)="realizarLogin(loginForm.value)">
+                  <ng-container *ngIf="!this.usuario">
+                    <ion-item lines="none" class="popover">
+                      <ion-label>Login</ion-label>
+                    </ion-item>
+                    <ion-item class="popover">
+                      <ion-input label="Usuário" name="email" ngModel type="text"></ion-input>
+                    </ion-item>
+                    <ion-item class="popover">
+                      <ion-input label="Senha" name="password" ngModel type="password"></ion-input>
+                    </ion-item>
+                  </ng-container>
                   <ion-item lines="none" class="popover">
-                    <ion-label>Login</ion-label>
-                  </ion-item>
-                  <ion-item class="popover">
-                    <ion-input label="Usuário" name="email" ngModel type="text"></ion-input>
-                  </ion-item>
-                  <ion-item class="popover">
-                    <ion-input label="Senha" name="password" ngModel type="password"></ion-input>
-                  </ion-item>
-                  <ion-item lines="none" class="popover">
-                      <ion-button (click)="fecharPopover()">Criar Uma</ion-button>
                     <ng-container *ngIf="this.usuario">
-                      <ion-button (click)="fecharPopover()">Sair</ion-button>
+                      <ion-button (click)="removerUsuario()">Sair</ion-button>
+                    </ng-container>
+                    <ng-container *ngIf="!this.usuario">
+                      <ion-button (click)="fecharPopover()">Criar Uma</ion-button>
                     </ng-container>
                     <ion-button color="light" slot="end" type="submit">
                       <ng-container *ngIf="this._authenticate.isLoading">  

@@ -11,6 +11,7 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage implements OnInit {
+  private _router: any;
 
   constructor(
     public _authenticate: AuthenticateService,
@@ -23,5 +24,8 @@ export class CadastroPage implements OnInit {
   }
   criarConta(dados: any){
     this._authenticate.register(dados.email, dados.password)
+    setTimeout(() => {
+      this._router.navigate(['/cadastro'])
+    }, 1000);
   }
 }
