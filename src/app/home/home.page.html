@@ -35,8 +35,11 @@
                       <ng-container *ngIf="this._authenticate.isLoading">  
                         <ion-spinner></ion-spinner>
                       </ng-container>
-                      <ng-container *ngIf="!this._authenticate.isLoading">
-                        Login
+                      <ng-container *ngIf="!this.usuario">
+
+                        <ng-container *ngIf="!this._authenticate.isLoading">
+                          Login
+                        </ng-container>
                       </ng-container>
                     </ion-button>
                   </ion-item>
