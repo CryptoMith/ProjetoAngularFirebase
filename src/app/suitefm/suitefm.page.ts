@@ -16,6 +16,6 @@ export class SuitefmPage implements OnInit {
   }
 
   setReserva() {
-    this.message.show('Reserva feita!')
+    this.message.show('Pré-Agendamento Realizado!')
   }
 }

@@ -16,14 +16,15 @@
 
     <ion-col size="12" size-lg="6">
       <ion-card>
-        <h1>Reserve seu Quarto</h1>
+        <h1>Faça seu pré-agendamento!</h1>
         <h1>Selecione a data:</h1>
         <ion-item>
           <ion-datetime class="custom-datetime" presentation="date" [multiple]="true" [value]="['2022-06-03', '2022-06-04', '2022-06-05']"></ion-datetime>
         </ion-item>
         <ion-item lines="none">
-          <ion-button color="primary" slot="end" type="Submit" (click)="setReserva()">Reservar</ion-button>
+          <ion-button color="primary" slot="end" type="Submit" (click)="setReserva()">Pré-agendamento</ion-button>
         </ion-item>
+        <h3>*SUJEITO A ALTERAÇÕES NO AGENDAMENTO*</h3>
       </ion-card>
     </ion-col>
    </ion-row>
