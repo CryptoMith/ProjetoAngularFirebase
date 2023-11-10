@@ -26,13 +26,15 @@ ion-card{
     flex-direction: column;
     text-align: center;
     border-radius: 15px;
-    background-color: rgb(0, 0, 0);
+    --background: beige;
+    color: black;
     }
 
     ion-card-content{
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
 
     ion-button{
@@ -49,3 +51,7 @@ ion-card{
         --background: beige; 
     --color: rgb(0, 0, 0);
     }
+
+    .centro h3 {
+  margin: 0 auto; // Isso centralizará horizontalmente o elemento h3
+}
