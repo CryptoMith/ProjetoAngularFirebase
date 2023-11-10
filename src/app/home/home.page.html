@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="success">
+  <ion-toolbar class="cor">
     <ion-buttons slot="secondary">
       <ng-container *ngIf="this.usuario">
         <ion-label>{{this.usuario.email}}</ion-label>
@@ -68,7 +68,7 @@
       </ion-col>
       
       <ion-col size="1">
-        <ion-button routerLink="/suite" shape="round">Suítes</ion-button>
+        <ion-button routerLink="/suite" shape="round" class="cor1">Suítes</ion-button>
       </ion-col>
       
   </ion-row>
@@ -79,15 +79,12 @@
 <ion-content [fullscreen]="true">
   
   
-  
   <ion-content class="ion-text-center"> 
     <ion-row class="ion-justify-content-center"> 
       <ion-col size="12" size-lg="4">
         <ion-card>
-          <img src="https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Hotel">
-          <ion-card-content>
-            <p>Seu descanso, é nossa prioridade</p>
-          </ion-card-content>
+          <img src="  https://images.pexels.com/photos/2670273/pexels-photo-2670273.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Hotel">
+           <h1>Seu descanso, é nossa prioridade</h1>
         </ion-card>
       </ion-col>
   
@@ -96,12 +93,10 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title>
-              <img src="https://images.pexels.com/photos/16104977/pexels-photo-16104977/free-photo-of-preto-e-branco-p-b-cidade-meio-urbano.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+              <img src="https://images.pexels.com/photos/1103808/pexels-photo-1103808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
             </ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            Venha prestigiar nossos serviços!
-          </ion-card-content>
+          <h1> Venha prestigiar nossos serviços!</h1> 
         </ion-card>
       </ion-col>
   
@@ -109,12 +104,10 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title>
-              <img src="https://images.pexels.com/photos/2670273/pexels-photo-2670273.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+              <img src="https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
             </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Temos as melhores suítes da região
-          </ion-card-content>
+          </ion-card-header>    
+            <h1> Temos as melhores suítes da região </h1> 
         </ion-card>
       </ion-col>
     </ion-row>
