@@ -22,7 +22,7 @@
           <ion-datetime class="custom-datetime" presentation="date" [multiple]="true" [value]="['2022-06-03', '2022-06-04', '2022-06-05']"></ion-datetime>
         </ion-item>
         <ion-item lines="none">
-          <ion-button color="primary" slot="end" type="Submit">Reservar</ion-button>
+          <ion-button color="primary" slot="end" type="Submit" (click)="setReserva()">Reservar</ion-button>
         </ion-item>
       </ion-card>
     </ion-col>
