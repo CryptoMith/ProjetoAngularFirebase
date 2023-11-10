@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-suitefm',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuitefmPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private message: MessageService
+  ) { }
 
   ngOnInit() {
   }
 
+  setReserva() {
+    this.message.show('Reserva feita!')
+  }
 }

@@ -25,7 +25,7 @@ export class CadastroPage implements OnInit {
   criarConta(dados: any){
     this._authenticate.register(dados.email, dados.password)
     setTimeout(() => {
-      this._router.navigate(['/cadastro'])
+      this._router.navigate(['/home'])
     }, 1000);
   }
 }
