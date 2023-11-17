@@ -7,71 +7,31 @@
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col size="12">
           <ion-row>
-            <ion-col size="12" size-lg="4">
-              <ion-card routerLink="/suitedl" class="card-branco">
-                <h1  class="ion-text-center">Nossa suíte deluxe.<br> Clique aqui e reserve já!</h1>
-                <img src="https://images.pexels.com/photos/6587902/pexels-photo-6587902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-
-                <h1> R$600,00 a diária contendo: </h1>
-
-                <h1>
-                  • Espaço Generoso; <br>
-                  • Móveis de Alta Qualidade; <br>
-                  • Banheiro Privativo de Luxo; <br>
-                  •  Vistas Panorâmicas; <br>
-                  • Serviço de Quarto 24 Horas; <br>
-                  • Amenidades Extras; <br>
-                  • Áreas de Estar Separadas; <br>
-                  • Serviço de Concierge; <br>
-                  • Privacidade; <br>
-                • Personalização.
-                </h1>
-              </ion-card>
-            </ion-col>
-
-            <ion-col size="12" size-lg="4">
-              <ion-card routerLink="/suitefm" class="card-branco" >
-                <h1 class="ion-text-center">Suites para a família. <br> Clique aqui e reserve já!</h1>
-                <img src="https://images.pexels.com/photos/6394574/pexels-photo-6394574.jpeg">
-
-                <h1> R$450,00 a diária contendo: </h1>
-
-                <h1>
-                  • Espaço Generoso; <br>
-                  • Camas Adicionais; <br>
-                  • Área de Estar; <br>
-                  • Comodidades para Crianças; <br>
-                  • Banheiro Privativo; <br>
-                  • TV e Entretenimentos; <br>
-                  • Serviço de Quarto; <br>
-                  • Armazenamento; <br>
-                  • Área de Refeições; <br>
-                  • Vistas e Localização.
-                 </h1>
-              </ion-card>
-            </ion-col>
-
-            <ion-col size="12" size-lg="4">
-              <ion-card  routerLink="/suitedx" class="card-branco">
-                <h1 class="ion-text-center">Suite indívidual.<br> Clique aqui e reserve já!</h1>
-                <img src="https://i.pinimg.com/originals/c9/09/e0/c909e05b3921886fee7f5af771499a32.jpg">
-
-                <h1> R$300,00 a diária contendo: </h1>
-
-                <h1>
-                  • Cama Individual; <br> 
-                  • Banheiro Privativo; <br>                   
-                  • Área de Estar e refeição; <br>                   
-                  • Móveis Essenciais; <br>                   
-                  • TV e Acesso à Internet; <br>                   
-                  • Telefone; <br>                   
-                  • Ar Condicionado ou Aquecimento; <br>                   
-                  • Serviço de Limpeza; <br>                   
-                  • Comodidades Básicas; <br>                   
-                  • Serviço de Quarto. <br>
-                </h1>
-              </ion-card>
-            </ion-col>
+            <ng-container *ngFor="let quarto of this.quartos">
+              <ion-col size="12" size-lg="4">
+                <ion-card routerLink="/suitefm" class="card-branco">
+                  <h1  class="ion-text-center">Nossa suíte deluxe.<br> Clique aqui e reserve já!</h1>
+                  <img src="https://images.pexels.com/photos/6587902/pexels-photo-6587902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+  
+                  <h1> R$ {{ quarto.diaria }} a diária contendo: </h1>
+                  <h1> R$ {{ quarto.tipo }} a diária contendo: </h1>
+  
+                  <h1>
+                    <ng-container *ngFor="let item of quarto.itens">
+                      • {{ item.nome }}; <br>
+                    </ng-container>
+                  </h1>
+                  <ion-row>
+                    <ng-container *ngFor="let foto of quarto.fotos">
+                      <ion-col size="4" class="ion-text-center">
+                        <img src="{{ foto.url }}" class="imagem">
+                      </ion-col>
+                    </ng-container>
+                  </ion-row>
+                </ion-card>
+              </ion-col>
+            </ng-container>
+            
           </ion-row>
         </ion-col>
       </ion-row>

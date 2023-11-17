@@ -1,0 +1,119 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>cadastro-quartos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12" size-lg="6">
+
+      <ion-card>
+        <ion-card-content>
+            <ion-item lines="none">
+            <ion-label>Cadastrar novo Quarto</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Nome"  [(ngModel)]="this.quarto.nome" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Tipo"  [(ngModel)]="this.quarto.tipo" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Diária"  [(ngModel)]="this.quarto.diaria" type="text"></ion-input>
+          </ion-item>
+          
+          <!-- ITENS -->
+          <ion-card>
+            <ion-card-content>
+                <ion-item lines="none">
+                <ion-label>Adicionar Itens</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Nome"  [(ngModel)]="this.item.nome" type="text"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-button color="light" slot="end" (click)="AddItem()">Adicionar Item</ion-button>
+              </ion-item>
+              <ion-item>
+                <ion-label>Itens adicionados</ion-label>
+              </ion-item>
+              <ng-container *ngFor="let item of this.quarto.itens">
+                <ion-item>
+                  <ion-label>{{ item.nome }}</ion-label>
+                </ion-item>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <!-- FOTOS -->
+          <ion-card>
+            <ion-card-content>
+                <ion-item lines="none">
+                <ion-label>Adicionar Fotos</ion-label>
+              </ion-item>
+              <ion-item>
+                <input type="file" value="Upload" (change)="memorizarArquivo($event)">
+              </ion-item>
+              <ion-item lines="none">
+                <ng-container *ngIf="this.isLoading == true">
+                  <ion-spinner></ion-spinner>
+                </ng-container>
+                <ng-container *ngIf="this.isLoading == false">
+                  <ion-button color="light" slot="end" (click)="salvarFoto()">Adicionar Foto</ion-button>
+                </ng-container>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-item lines="none">
+            <ion-button color="light" slot="end" (click)="AddQuarto()">Cadastrar Quarto</ion-button>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+     
+    
+        
+    </ion-col>
+  </ion-row>
+
+
+  <ion-item-divider></ion-item-divider>
+
+  <!-- LISTAGEM DOS ITENS -->
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12">
+      <ion-item>Quartos Cadastrados</ion-item>
+      <ng-container *ngFor="let quarto of this.quartos">
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="12">
+            <ion-row>
+              <ion-col size="12">
+                <ion-label><h1>Nome: {{ quarto.nome }}</h1></ion-label>
+                <ion-label><h1>Diária: R$ {{ quarto.diaria }}</h1></ion-label>
+                <ng-container *ngFor="let item of quarto.itens">
+                  <ion-row>
+                    <ion-col size="12">
+                      <ion-label><p>{{ item.nome }}</p></ion-label>
+                    </ion-col>
+                  </ion-row>
+                </ng-container>
+                <ng-container *ngFor="let foto of quarto.fotos">
+                  <ion-row>
+                    <ion-col size="12">
+                      <img src="{{ foto.url }}">
+                    </ion-col>
+                  </ion-row>
+                </ng-container>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+        </ion-item>
+      </ng-container>
+    </ion-col>
+  </ion-row>
+</ion-content>
