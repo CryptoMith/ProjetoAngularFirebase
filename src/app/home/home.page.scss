@@ -7,20 +7,34 @@ ion-popover {
     --color: black;
 }
 ion-content{
---background: rgb(255, 255, 255);
-}
+    --background: transparent;
+    background-image: url('https://images.pexels.com/photos/262713/pexels-photo-262713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    color: black;
+ }
+
 
 ion-card{
     height: 750px;
     width: 500px;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+    border-radius: 15px;
+    --background: beige;
+    color: black;
     }
 
     ion-card-content{
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
 
     ion-button{
@@ -29,6 +43,15 @@ ion-card{
         right: 20px; 
         top: 50%; 
         transform: translateY(-50%);
-       --background: #32A89C;
-        --padding: 5px;
+       --background: #c68633;
+       --color:rgb(255, 255, 255);
     }
+
+    .cor{
+        --background: beige; 
+    --color: rgb(0, 0, 0);
+    }
+
+    .centro h3 {
+  margin: 0 auto; // Isso centralizará horizontalmente o elemento h3
+}
