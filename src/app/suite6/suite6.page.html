@@ -4,30 +4,34 @@
       <ion-col size="12" size-lg="4">
         <ion-button routerLink="/suite" shape="round">Retornar</ion-button>
       </ion-col>
+      <ion-col>
+        <ion-button routerLink="/cadastro-quartos" shape="round" color="dark">Cadastrar quarto</ion-button>
+      </ion-col>
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col size="12">
           <ion-row>
             <ng-container *ngFor="let quarto of this.quartos">
               <ion-col size="12" size-lg="4">
                 <ion-card routerLink="/suitefm" class="card-branco">
-                  <h1  class="ion-text-center">Nossa suíte deluxe.<br> Clique aqui e reserve já!</h1>
-                  <img src="https://images.pexels.com/photos/6587902/pexels-photo-6587902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-  
-                  <h1> R$ {{ quarto.diaria }} a diária contendo: </h1>
-                  <h1> R$ {{ quarto.tipo }} a diária contendo: </h1>
-  
-                  <h1>
-                    <ng-container *ngFor="let item of quarto.itens">
-                      • {{ item.nome }}; <br>
-                    </ng-container>
-                  </h1>
+                  <h1  class="ion-text-center">Nosso {{ quarto.nome }}<br> Clique aqui e pré-agende já!</h1>
                   <ion-row>
                     <ng-container *ngFor="let foto of quarto.fotos">
-                      <ion-col size="4" class="ion-text-center">
+                      <ion-col size="12" class="ion-text-center">
                         <img src="{{ foto.url }}" class="imagem">
                       </ion-col>
                     </ng-container>
                   </ion-row>
+  
+                  <h1>Valor: R$ {{ quarto.diaria }}</h1>
+                  <h1>Tipo da Suíte: {{ quarto.tipo }}</h1>
+                  
+                  <h1>a diária contendo:</h1>
+                  <h2>
+                    <ng-container *ngFor="let item of quarto.itens">
+                      • {{ item.nome }}; <br>
+                    </ng-container>
+                  </h2>
+
                 </ion-card>
               </ion-col>
             </ng-container>

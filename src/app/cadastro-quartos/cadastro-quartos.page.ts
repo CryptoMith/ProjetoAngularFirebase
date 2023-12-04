@@ -14,7 +14,9 @@ export class CadastroQuartosPage implements OnInit {
   quarto:any = {
     nome: null, 
     diaria: null,
-    tipo: null,
+    tipos: {
+      nome: null
+    },
     fotos: [{
       url: null
     }],
@@ -24,7 +26,7 @@ export class CadastroQuartosPage implements OnInit {
   quartos: any = [{
     nome: null, 
     diaria: null,
-    tipo: null,
+    tipos: [],
     fotos: [{
       url: null
     }],
@@ -38,6 +40,32 @@ export class CadastroQuartosPage implements OnInit {
   foto: any = {
     url: null
   };
+
+  // tipo = [
+  //   {
+  //     id: 1,
+  //     name: 'De luxo',
+  //     type: 'deluxe',
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Família',
+  //     type: 'familia',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Individual',
+  //     type: 'individual',
+  //   },
+  // ];
+
+  // compareWith(o1: { id: any; }, o2: { id: any; }) {
+  //   return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  // }
+
+  // handleChange(ev: { target: { value: any; }; }) {
+  //   console.log('Current value:', JSON.stringify(ev.target.value));
+  // }
 
   public file: any = {};
 
@@ -59,7 +87,9 @@ export class CadastroQuartosPage implements OnInit {
 
   }
 
-
+  setTipo(tipo: any) {
+    this.quarto.tipos.nome = tipo.detail.value;
+  }
 
   AddItem() {
     this.quarto.itens.push(this.item)
